@@ -1,0 +1,23 @@
+#include <TVout.h>
+
+TVout TV;
+unsigned char x, y;
+
+void setup ( )
+{
+  TV.start_render( _NTSC );
+  TV.clear_screen ( );
+  TV.print_str ( 10, 10, "Welcome to the shittiest game  in existence!" );
+  TV.delay ( 60 );
+  TV.print_str ( 10, 10, "Push the right button when the screen says to" );
+}
+
+void loop ( )
+{
+  TV.clear_screen ( );
+  delay(1000 * random(1, 10 + 1)); // Wait for 1000 * random(1, 10 + 1) millisecond(s)
+  TV.print_str ( 10, 10, "yay" );
+  if (digitalRead(0) < 1) {
+    TV.print_str ( 10, 10, "yay" );
+  TV.delay ( 60 );
+}
